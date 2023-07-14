@@ -92,7 +92,7 @@ func reverseFunc(text []string) {
 	}
 }
 
-func sortHelpFunc(i, j int, text []string) bool { // функция помщник
+func sortHelpFunc(i, j int, text []string) bool { // функция помощник
 	re := regexp.MustCompile(`^\d+`) // регулярное выражение для поиска чисел из начала строки
 	if !fl.n {                       // если флага n нет
 		str1 := strings.Split(text[i], " ")       // делим строку на слайс подстрок по пробелу
