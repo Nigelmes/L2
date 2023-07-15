@@ -46,11 +46,11 @@ func main() {
 }
 
 func checkValidFile() (string, error) {
-	args := flag.Args()
-	if len(args) == 0 { // проверяем указан ли файл для сортировки , если нет возвращаем ошибку
+	args := os.Args
+	if len(args) == 1 { // проверяем указан ли файл для сортировки , если нет возвращаем ошибку
 		return "", fmt.Errorf("отсутствует файл")
 	}
-	filename := args[0]                                  // забираем только первое название файла
+	filename := args[1]                                  // забираем только первое название файла
 	if _, err := os.Stat(filename); os.IsNotExist(err) { // проверяем валидность этого файла , если нет возвращаем ошибку
 		return "", fmt.Errorf("%s - такого файла не существует", filename)
 	}
